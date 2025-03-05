@@ -19,12 +19,10 @@ class Snake:
         start_links = 1
         while start_links <= 3:
             start_links += 1
-            new_link = Turtle(shape="square")
-            new_link.color(self._snake_color)
-            new_link.penup()
-            new_link.goto(x=self.x_start, y=0)
+            position = (self.x_start, 0)
+            self.add_segment(position)
             self.x_start += 20
-            self.segments.append(new_link)
+
 
     def move(self) -> None:
         for seg_num in range(len(self.segments) - 1, 0, -1):
@@ -32,6 +30,16 @@ class Snake:
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)
         self.head.forward(MOVE_DISTANCE)
+
+    def add_segment(self, position):
+        new_link = Turtle(shape="square")
+        new_link.color(self._snake_color)
+        new_link.penup()
+        new_link.goto(position)
+        self.segments.append(new_link)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
     def up(self) -> None:
         if self.head.heading() != DOWN:
