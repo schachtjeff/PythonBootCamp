@@ -25,6 +25,7 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 game_is_on = True
+game = 0
 while game_is_on:
     screen.update()
     time.sleep(0.2)
@@ -47,7 +48,10 @@ while game_is_on:
     # Detect collision with tail.
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            if game > 0:
+                game += 1
+                print("ouch ate my tail")
+                game_is_on = False
+                scoreboard.game_over()
 
 screen.exitonclick()
