@@ -3,4 +3,4 @@
 
  **Below are learnings and projects using Python 3.13.11 (unless otherwise stated)<br>
  	- Beginning:
- 		- Day 1 - variables
+ 		- Day 1 - Printing and variables.  Project: Band Name Generator
