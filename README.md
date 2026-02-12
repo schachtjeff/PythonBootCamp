@@ -6,5 +6,4 @@
  <t>- Day 1 - Printing and variables.  Project: Band Name Generator<br>
  <t>- Day 2 - Data Types and String Manipulation.  Projects: bmi and tip calculators<br>
  <t>- Day 3 - Control Flow, logical operators and modulo.  Project: Treasure Island 'choose your adventure game.<br>
- <t><t>![Project: Treasure Island adventure game.](./Beginner/3_control_flow/TreasureIslandProject.png)<br>
- <t><t><img src="./Beginner/3_control_flow/TreasureIslandProject.png" width="200" height="150" alt="Treasure Island Project" /><br>
+ <t><t><t><img src="./Beginner/3_control_flow/TreasureIslandProject.png" width="250" height="200" alt="Treasure Island Project" /><br>
