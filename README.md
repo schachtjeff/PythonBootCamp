@@ -7,3 +7,5 @@
  <t>- Day 2 - Data Types and String Manipulation.  Projects: bmi and tip calculators<br>
  <t>- Day 3 - Control Flow, logical operators and modulo.  Project: Treasure Island 'choose your adventure game.<br>
  <t><t><t><img src="./Beginner/3_control_flow/TreasureIslandProject.png" width="250" height="200" alt="Treasure Island Project" /><br>
+ <t>- Day 4 - Randomization and lists.  Project: Rock, Paper and Scissors game.<br>
+ <t><t><t><img src="./Beginner/4_lists_random/RockPaperScissors.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
