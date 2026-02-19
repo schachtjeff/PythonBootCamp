@@ -10,3 +10,4 @@
  <t>- Day 4 - Randomization and lists.  Project: Rock, Paper and Scissors game.<br>
  <t><t><t><img src="./Beginner/4_lists_random/RockPaperScissors.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
  <t>- Day 5 - Loops.  Project: Password Generator<br>
+ <t>- Day 6 - Functions and While Loops.  Reeboorg's World coding<br>
