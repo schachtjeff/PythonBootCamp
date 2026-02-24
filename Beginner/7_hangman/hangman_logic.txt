@@ -1,0 +1,17 @@
+Here is the logic for the Hangman game.
+
+1. Start
+2. Generate a random word.
+3. Generate as many blanks as letters in word.
+4. Loop
+    a. Ask the user to guess a letters
+    b. Is the guessed letter in the word?
+        i. Yes, Replace the blank with the letter.
+            a. Are all the blanks filled.
+                i. No? go back to 4.a.
+                ii. Yes? go to 5.
+        ii. No, Lose a life.
+            a. Have they run out of lives?
+                i. No? go back to 4.a.
+                ii. Yes? go to 5.
+5. Game Over!
