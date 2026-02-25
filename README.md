@@ -13,4 +13,5 @@
  <t>- Day 6 - Functions and While Loops.  Reeboorg's World coding<br>
  <t>- Day 7 - Hangman Project<br>
  <t>- Day 8 - Functions with Input Parameters.  Ceasar Cipher.<br>
+ <t>- Day 9 - Dictionaries.  Project: Secret Auction.<br>
 
