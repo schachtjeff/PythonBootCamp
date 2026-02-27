@@ -24,4 +24,4 @@ def is_leap_year(year) -> bool:
     return False
 
 print(is_leap_year(2100))
-print(is_leap_year(2000))        
+print(is_leap_year(2000))
