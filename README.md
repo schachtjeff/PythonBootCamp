@@ -16,3 +16,4 @@
  <t>- Day 9 - Dictionaries.  Project: Secret Auction.<br>
  <t>- Day 10 - Functions with Outputs.  Project: Calculator.<br>
  <t>- Day 11 - Capstone Project: Blackjack.<br>
+ <t><t><t><img src="./Beginner/11_capstone_blackjack/Blackjack.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
