@@ -1,0 +1,28 @@
+---
+config:
+    theme: redux
+---
+
+flowchart TD
+    A(["Start"])
+    A -->|Players get random cards| B(drawCards for both players)
+    B --> K
+    K --> C{Does player have Blackjack? Ace + 10}
+    C -->|Player has BlackJack| D[Player Wins!]
+    C -->|Computer has BlackJack| E[Player Loses!]
+    C -->|No| F{is user score over 21?}
+    F -->|Yes| G{is Ace or 11 present?}
+    G -->|No| E
+    G -->|Yes| H{if Ace turns to 1, still over 21?}
+    H -->|Yes| E
+    H -->|No| I{does user want anther card?}
+    F -->|No| I
+    I -->|Yes| J(drawCard)
+    J --> K[addPlayersCardsScores]
+    I -->|No| L[Computer draws, if 16 or less.]
+    L --> M{is Computer over?}
+    M --> |Yes|D
+    M --> |No| N{Compare scores of who is higher}
+    N --> |User Higher Score| D
+    N --> |Computer Higher Score| E
+    N --> |Same score| O[Its' a draw]
