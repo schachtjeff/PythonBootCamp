@@ -18,4 +18,4 @@
  <t><t><t><img src="./11_capstone_blackjack/Blackjack.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
  <t>- Day 12 - Scope. Project: Number Guessing Game<br>
  <t>- Day 13 - Debugging<br>
- <t>- Day 14 - Project: Higher or Lower<br>
+ <t>- Day 14 - Project: Higher or Lower -> No Sample data given to develop.<br>
