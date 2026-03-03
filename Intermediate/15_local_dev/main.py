@@ -48,7 +48,18 @@ def clear_the_screen() -> None:
     else:
         os.system('clear')
 
-def makeCoffee() -> None:
+def isEnoughResources(resources, coffee_name) -> bool:
+    print(MENU[coffee_name]["ingredients"])
+    print(resources)
+    for key, value_1 in MENU[coffee_name]["ingredients"].items():
+        if key in resources:
+            value_2 = resources[key]
+            if value_2 < value_1:
+                print(f"Sorry there is not enough {key}.")
+                return False
+    return True
+
+def makeCoffee(coffee_name: str) -> None:
     pass
 
 def printReport(money, resources) -> None:
@@ -67,12 +78,10 @@ def main() -> None:
     off = False
     while not off:
         user_answer = input("What would you like? (espresso/latte/cappuccino): ").lower()
-        if user_answer == 'espresso':
-            makeCoffee()
-        elif user_answer == 'latte':
-            makeCoffee()
-        elif user_answer == 'cappuccino':
-            makeCoffee()
+        if user_answer == 'espresso' or user_answer == 'latte' or user_answer == 'cappuccino':
+            if isEnoughResources(resources=updated_resources, coffee_name=user_answer):
+                print("resources get updated here.")
+                #updated_resources = makeCoffee(coffee_name=user_answer)
         elif user_answer == 'report':
             printReport(money=current_money, resources=updated_resources)
         elif user_answer == 'off':
