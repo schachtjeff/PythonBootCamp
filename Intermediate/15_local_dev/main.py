@@ -51,10 +51,18 @@ def clear_the_screen() -> None:
 def makeCoffee() -> None:
     pass
 
-def printReport() -> None:
-    pass
+def printReport(money, resources) -> None:
+    # Print resources dictionary in title
+    for key, value in resources.items():
+        if key == "coffee":
+            print(f"{key.title()}: {value}g")
+        else:
+            print(f"{key.title()}: {value}ml")
+    print(f"Money: ${money}")
 
 def main() -> None:
+    current_money = 0.0
+    updated_resources = RESOURCES
     # Loop until user types 'off'
     off = False
     while not off:
@@ -66,7 +74,7 @@ def main() -> None:
         elif user_answer == 'cappuccino':
             makeCoffee()
         elif user_answer == 'report':
-            printReport()
+            printReport(money=current_money, resources=updated_resources)
         elif user_answer == 'off':
             off = True
             print("Goodbye!")
