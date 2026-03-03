@@ -9,3 +9,5 @@
  <t><t><t><img src="./Beginner/4_lists_random/RockPaperScissors.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
  <t>- Day 11 - Capstone Project: Blackjack.<br>
  <t><t><t><img src="./Beginner/11_capstone_blackjack/Blackjack.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
+ * Sample Intermediate:<br>
+ <t> To be filled in later...<br>
