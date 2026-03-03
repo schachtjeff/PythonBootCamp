@@ -4,7 +4,6 @@
 
 #imports
 import os
-import sys
 
 # Global
 MENU = {
@@ -39,18 +38,8 @@ RESOURCES = {
     "coffee": 100,
 }
 
-def clear_the_screen() -> None:
-    """Clear the console screen"""
-    # check if windows
-    if os.name == 'nt':
-        os.system('cls')
-    # Otherwise assume POSIX
-    else:
-        os.system('clear')
 
 def isEnoughResources(resources, coffee_name) -> bool:
-    print(MENU[coffee_name]["ingredients"])
-    print(resources)
     for key, value_1 in MENU[coffee_name]["ingredients"].items():
         if key in resources:
             value_2 = resources[key]
@@ -59,8 +48,61 @@ def isEnoughResources(resources, coffee_name) -> bool:
                 return False
     return True
 
-def makeCoffee(coffee_name: str) -> None:
-    pass
+
+def getCoffeeCost(coffee_name: str) -> float:
+    return MENU[coffee_name]["cost"]
+
+
+def calculateInsertedCoins(inserted_coins) -> float:
+    coinage = {
+        "quaters": 0.25,
+        "dimes": 0.1,
+        "nickles": 0.05,
+        "pennies": 0.01
+    }
+
+    total_value = 0.0
+
+    for key, value in inserted_coins.items():
+        if key in coinage:
+            this_value = value * coinage[key]
+            total_value += this_value
+    return total_value
+
+
+def askInsertCoins():
+    inserted_coins = {
+        "quaters": 0,
+        "dimes": 0,
+        "nickles": 0,
+        "pennies": 0
+    }
+
+    for key, value in inserted_coins.items():
+        inserted_coins[key] = int(input(f"How many {key}?: "))
+    return inserted_coins
+
+
+def isProcessCoins(coffee_name: str) -> bool:
+    coffee_cost = getCoffeeCost(coffee_name=coffee_name)
+    inserted_coins = askInsertCoins()
+    inserted_value_coins = calculateInsertedCoins(inserted_coins=inserted_coins)
+    if coffee_cost > inserted_value_coins:
+        print("Sorry that's not enough money.  Money refunded.")
+        return False
+    else:
+        change = inserted_value_coins - coffee_cost
+        print(f"Here is ${round(change, 2)} in change.")
+        return True
+
+
+def makeCoffee(coffee_name: str, resources):
+    # Make coffee with removing current resources
+    for key, value_1 in MENU[coffee_name]["ingredients"].items():
+        if key in resources:
+            resources[key] -= value_1
+    return resources
+
 
 def printReport(money, resources) -> None:
     # Print resources dictionary in title
@@ -71,6 +113,7 @@ def printReport(money, resources) -> None:
             print(f"{key.title()}: {value}ml")
     print(f"Money: ${money}")
 
+
 def main() -> None:
     current_money = 0.0
     updated_resources = RESOURCES
@@ -80,8 +123,9 @@ def main() -> None:
         user_answer = input("What would you like? (espresso/latte/cappuccino): ").lower()
         if user_answer == 'espresso' or user_answer == 'latte' or user_answer == 'cappuccino':
             if isEnoughResources(resources=updated_resources, coffee_name=user_answer):
-                print("resources get updated here.")
-                #updated_resources = makeCoffee(coffee_name=user_answer)
+                if isProcessCoins(coffee_name=user_answer):
+                    current_money += getCoffeeCost(coffee_name=user_answer)
+                    updated_resources = makeCoffee(coffee_name=user_answer, resources=updated_resources)
         elif user_answer == 'report':
             printReport(money=current_money, resources=updated_resources)
         elif user_answer == 'off':
