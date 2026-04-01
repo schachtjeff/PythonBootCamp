@@ -10,7 +10,7 @@ class QuizBrain:
     def next_question(self):
         the_data = self.question_list[self.question_number]
         self.question_number +=1
-        user_answer = input(f"Q.{self.question_number}: {the_data.text}. (True/False)?: ")
+        user_answer = input(f"\n\nQ.{self.question_number}: {the_data.text}. (True/False)?: ")
         self.check_answer(user_answer=user_answer, correct_answer=the_data.answer)
 
 
