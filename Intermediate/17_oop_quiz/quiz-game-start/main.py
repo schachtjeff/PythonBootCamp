@@ -19,4 +19,6 @@ def main() -> None:
     while quiz.still_has_questions():
         quiz.next_question()
 
+    print(f"You've completed the quiz. \n Your final score is {quiz.user_score}/{quiz.question_number}")
+
 main()
