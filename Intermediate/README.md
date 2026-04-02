@@ -5,3 +5,4 @@
  <t>- Day 15 - Local Development Environment Setup and the Coffee Machine Project<br>
  <t>- Day 16 - Object Oriented Programming (OOP)<br>
  <t>- Day 17 - More OOP and the Quiz Project<br>
+ <t>- Day 18 - Turtle Graphics, Tuples and importing Modules<br>
