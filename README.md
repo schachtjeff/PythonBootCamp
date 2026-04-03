@@ -10,4 +10,5 @@
  <t>- Day 11 - Capstone Project: Blackjack.<br>
  <t><t><t><img src="./Beginner/11_capstone_blackjack/Blackjack.png" width="250" height="200" alt="Rock Paper Scissors Project" /><br>
  * Sample Intermediate:<br>
- <t> To be filled in later...<br>
+ <t> - Day 18 - Hirst like Painting program.<br>
+ * <t><t><t><img src="./Intermediate/18_turtle_gui/hirst_paint_project/Hirst_like_painting.jpg" width="150" height="100" alt="Rock Paper Scissors Project" /><br>

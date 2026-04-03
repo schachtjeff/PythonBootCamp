@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
-# Higher Order Functions
+# Usage of Higher Order Functions
+
 
 tim = Turtle()
 screen = Screen()
@@ -23,6 +24,7 @@ def clear_drawing():
     tim.pendown()
 
 screen.listen()
+# Functions above are used as input.
 screen.onkey(key="w", fun=move_forwards)
 screen.onkey(key="s", fun=move_backwards)
 screen.onkey(key="a", fun=move_counterClockwise)

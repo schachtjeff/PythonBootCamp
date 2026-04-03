@@ -1,17 +1,23 @@
-import turtle
+# Imports
 from turtle import Turtle, Screen
 import random
 
+#Globals
 is_race_on = False
-screen = Screen()
-screen.setup(width=500, height=400)
-user_choice = screen.textinput(title="Make your choice", prompt="Which turtle will win the race? Enter a color: ")
-print(user_choice)
+finish_line_coord = 230
 turtle_colors = ["red", "orange", "yellow", "green", "blue", "purple"]
 all_turtles = []
-finish_line_coord = 230
-
 y_start = 175
+
+# Setup the screen
+screen = Screen()
+screen.setup(width=500, height=400)
+
+# User window to make a selection
+user_choice = screen.textinput(title="Make your choice", prompt="Which turtle will win the race? Enter a color: ")
+print(user_choice)
+
+# Setup the turtles for race
 for color in turtle_colors:
     new_turtle = Turtle(shape="turtle")
     new_turtle.color(color)
@@ -23,6 +29,7 @@ for color in turtle_colors:
 if user_choice:
     is_race_on = True
 
+# Start the race
 while is_race_on:
     for turtle in all_turtles:
         if turtle.xcor() > finish_line_coord:
