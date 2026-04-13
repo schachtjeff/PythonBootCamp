@@ -37,7 +37,7 @@ while game_is_on:
     time.sleep(0.2)
     snake.move()
 
-    # detect collision of food with snake
+    # detect collision of food (within 15 pixels) with head of snake
     if snake.head.distance(food) < 15:
         food.refresh()
         snake.extend()

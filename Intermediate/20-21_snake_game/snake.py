@@ -40,6 +40,7 @@ class Snake:
         self.segments.append(new_link)
 
     def extend(self):
+        # Append segment to the tail
         self.add_segment(self.segments[-1].position())
 
     def up(self) -> None:
