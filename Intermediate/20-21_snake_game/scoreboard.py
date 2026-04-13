@@ -1,5 +1,7 @@
+# Imports
 from turtle import Turtle
 
+# Constants
 ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")
 
@@ -23,5 +25,6 @@ class Scoreboard(Turtle):
 
     def increase_score(self):
         self.score += 1
+        # clear is so score doesn't overlap previous scores
         self.clear()
         self.update_scoreboard()

@@ -1,12 +1,17 @@
+# Snake Game
+
+# Imports
 from turtle import Screen
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 import time
 
+# Constants
 WALLS = 280
 NEG_WALLS = -280
 
+# Screen setup
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
@@ -18,6 +23,7 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
 
+# Listen for keyboard arrow direction pressing
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -31,7 +37,7 @@ while game_is_on:
     time.sleep(0.2)
     snake.move()
 
-    # detect collision of food with snake
+    # detect collision of food (within 15 pixels) with head of snake
     if snake.head.distance(food) < 15:
         food.refresh()
         snake.extend()
@@ -47,11 +53,15 @@ while game_is_on:
 
     # Detect collision with tail.
     for segment in snake.segments[1:]:
+        #if segment == snake.head:
+        #    pass
         if snake.head.distance(segment) < 10:
+            # Get passed the init run
             if game > 0:
                 game += 1
                 print("ouch ate my tail")
                 game_is_on = False
                 scoreboard.game_over()
 
+# Leave the game on mouse click
 screen.exitonclick()
