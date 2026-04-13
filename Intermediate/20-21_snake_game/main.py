@@ -53,7 +53,10 @@ while game_is_on:
 
     # Detect collision with tail.
     for segment in snake.segments[1:]:
+        #if segment == snake.head:
+        #    pass
         if snake.head.distance(segment) < 10:
+            # Get passed the init run
             if game > 0:
                 game += 1
                 print("ouch ate my tail")
