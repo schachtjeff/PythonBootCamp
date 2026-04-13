@@ -1,12 +1,17 @@
+# Snake Game
+
+# Imports
 from turtle import Screen
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 import time
 
+# Constants
 WALLS = 280
 NEG_WALLS = -280
 
+# Screen setup
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
@@ -18,6 +23,7 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
 
+# Listen for keyboard arrow direction pressing
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -54,4 +60,5 @@ while game_is_on:
                 game_is_on = False
                 scoreboard.game_over()
 
+# Leave the game on mouse click
 screen.exitonclick()

@@ -8,13 +8,14 @@ RIGHT = 0
 
 class Snake:
     def __init__(self):
+        # Initiate the snake head with links
         self.segments = []
         self._snake_color = "white"
         self.x_start = -30
         self.create_snake()
         self.head = self.segments[0]
 
-
+    # Create the snake
     def create_snake(self) -> None:
         start_links = 1
         while start_links <= 3:
