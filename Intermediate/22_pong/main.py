@@ -1,20 +1,24 @@
+#Imports
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
 import time
 
+# Setup the screen
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
 
+# Create the right & left paddles, the ball, and scoreboard.
 right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
 ball = Ball()
 scoreboard = Scoreboard()
 
+# Listen for up/down keys for the different players
 screen.listen()
 screen.onkey(right_paddle.go_up, "Up")
 screen.onkey(right_paddle.go_down, "Down")
@@ -52,4 +56,5 @@ while game_is_on:
     if scoreboard.get_winner():
         game_is_on = False
 
+# Exit the game when done.
 screen.exitonclick()
