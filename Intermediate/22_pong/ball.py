@@ -1,3 +1,4 @@
+#Imports
 from turtle import Turtle
 from random import randint
 
@@ -12,6 +13,7 @@ class Ball(Turtle):
         self.y_move = 10 
         self.move_speed = 0.1
 
+    # Issue movement
     def move(self):
         new_x = self.xcor() + self.x_move
         new_y = self.ycor() + self.y_move
@@ -30,6 +32,7 @@ class Ball(Turtle):
         self.x_move = x * -1
         self.move_speed *= 0.9
 
+    # place ball in beginning place
     def reset_position(self):
         self.goto(0,0)
         self.move_speed = 0.1

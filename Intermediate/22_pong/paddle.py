@@ -1,3 +1,4 @@
+#Imports
 from turtle import Turtle
 
 class Paddle(Turtle):
@@ -9,6 +10,7 @@ class Paddle(Turtle):
         self.penup()
         self.goto(xy_cord_position)
 
+    # Adjust the coordinates by 20 pixels either up or down.
     def go_up(self):
         new_y = self.ycor() + 20
         self.goto(self.xcor(), new_y)

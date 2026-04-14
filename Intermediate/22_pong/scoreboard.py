@@ -1,5 +1,7 @@
+#Imports
 from turtle import Turtle
 
+#Constant
 GAME_WINNER = 5
 
 
@@ -23,6 +25,7 @@ class Scoreboard(Turtle):
         self.r_score += 1
 
     def update_scoreboard(self):
+        # Clear the screen and rewrite the scores
         self.clear()
         self.goto(-100, 200)
         self.write(self.l_score, align="center", font=("Courier", 80, "normal"))
@@ -30,6 +33,7 @@ class Scoreboard(Turtle):
         self.write(self.r_score, align="center", font=("Courier", 80, "normal"))
 
     def get_winner(self):
+        # Print the winner on display
         if self.l_score == GAME_WINNER:
             print("left paddle won!")
             return True
