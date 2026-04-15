@@ -8,16 +8,16 @@ FINISH_LINE_Y = 280
 
 
 class Player(Turtle):
-    def __init__(self, xy_coordinate):
+    def __init__(self):
         super().__init__()
         self.shape("turtle")
         self.penup()
-        self.right(angle=270)
-        self.goto(xy_coordinate)
+        self.setheading(to_angle=90)
+        self.goto(STARTING_POSITION)
 
     def go_up(self) -> None:
         new_y_cord = self.ycor() + 20
         self.goto(self.xcor(), new_y_cord)
 
-    def reset_position(self, xy_coordinate):
-        self.goto(xy_coordinate)
+    def reset_position(self) -> None:
+        self.goto(STARTING_POSITION)

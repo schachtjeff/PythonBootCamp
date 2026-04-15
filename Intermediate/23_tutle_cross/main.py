@@ -12,8 +12,7 @@ screen.title("Turtle Crossing")
 screen.tracer(0)
 
 # Create the turtle to cross
-start_level_pos = (0, -275)
-timmy = Player(start_level_pos)
+timmy = Player()
 
 # Listen for up arrow key to move the player
 screen.listen()
