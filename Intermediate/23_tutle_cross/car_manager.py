@@ -28,7 +28,7 @@ class CarManager:
 
     def move_cars(self) -> None:
         for car in self.all_moving_cars:
-            car.backward(STARTING_MOVE_DISTANCE)
+            car.backward(self.car_speed)
 
     def is_create_new_car(self) -> bool:
         #Random chance every 1 and 6 chances

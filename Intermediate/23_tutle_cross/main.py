@@ -14,6 +14,7 @@ screen.tracer(0)
 # Create the turtle to cross
 timmy = Player()
 car_manager = CarManager()
+score_board = Scoreboard()
 
 # Listen for up arrow key to move the player
 screen.listen()
@@ -32,10 +33,13 @@ while game_is_on:
     for car in car_manager.all_moving_cars:
         if car.distance(timmy) < 20:
             game_is_on = False
+            score_board.game_over_message()
 
     # Detect the finish line and do actions
     if timmy.is_at_finish_line():
+        score_board.level_up()
         car_manager.increase_speed()
+        score_board.update_scoreboard()
         timmy.reset_position()
 
     # manage memory, maybe
