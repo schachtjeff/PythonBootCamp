@@ -10,4 +10,5 @@
  <t>- Day 19 - Instances, state and higher order functions.  Project: Turtle race game.<br>
  <t>- Day 20 & 21 - Animation & Coordinates. Inheritance & List Slicing.  Project: Snake game.<br>
  <t>- Day 22 - Project: Pong game.<br>
- <t>- Day 23 - Capstone Project: Turtle Crossing game.
+ <t>- Day 23 - Capstone Project: Turtle Crossing game.<br>
+ <t><t><t><img src="./23_tutle_cross/TurtleCrossing.jpg" width="250" height="200" alt="Turtle Crossing" /><br>
