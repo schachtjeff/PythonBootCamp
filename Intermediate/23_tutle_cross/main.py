@@ -33,6 +33,11 @@ while game_is_on:
         if car.distance(timmy) < 20:
             game_is_on = False
 
+    # Detect the finish line and do actions
+    if timmy.is_at_finish_line():
+        car_manager.increase_speed()
+        timmy.reset_position()
+
     # manage memory, maybe
     car_manager.destroy_cars()
 

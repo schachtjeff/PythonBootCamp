@@ -14,6 +14,7 @@ RANDOM_Y_POS_UPPER = 250
 class CarManager:
     def __init__(self):
         self.all_moving_cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_new_car(self) -> None:
         if self.is_create_new_car():
@@ -41,4 +42,8 @@ class CarManager:
         for car in self.all_moving_cars:
             if car.xcor() < -350:
                 self.all_moving_cars.remove(car)
+
+    def increase_speed(self) -> None:
+        self.car_speed += MOVE_INCREMENT
+
 
