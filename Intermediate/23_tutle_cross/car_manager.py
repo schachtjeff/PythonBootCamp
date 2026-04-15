@@ -37,3 +37,8 @@ class CarManager:
         else:
             return False
 
+    def destroy_cars(self):
+        for car in self.all_moving_cars:
+            if car.xcor() < -350:
+                self.all_moving_cars.remove(car)
+

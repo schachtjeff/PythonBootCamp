@@ -27,5 +27,14 @@ while game_is_on:
     car_manager.create_new_car()
     car_manager.move_cars()
 
+
+    # Detect the collision of timmy with the cars
+    for car in car_manager.all_moving_cars:
+        if car.distance(timmy) < 20:
+            game_is_on = False
+
+    # manage memory, maybe
+    car_manager.destroy_cars()
+
 # Exit the game when done.
 screen.exitonclick()
