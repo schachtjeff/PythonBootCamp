@@ -12,3 +12,5 @@
  <t>- Day 22 - Project: Pong game.<br>
  <t>- Day 23 - Capstone Project: Turtle Crossing game.<br>
  <t><t><t><img src="./23_tutle_cross/TurtleCrossing.jpg" width="250" height="200" alt="Turtle Crossing" /><br>
+ <t>- Day 24 - Files, Directories, and Paths.  Project: Write same letters changing the name<br>
+ 
