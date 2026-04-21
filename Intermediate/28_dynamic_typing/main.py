@@ -16,7 +16,22 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    count_down(5 * 60)
+    global reps
+    reps += 1
+
+    work_seconds = WORK_MIN * 60
+    short_break_seconds = SHORT_BREAK_MIN * 60
+    long_break_seconds = LONG_BREAK_MIN * 60
+
+    if reps % 8 == 0:
+        count_down(long_break_seconds)
+        timer_label.config(text="Break", fg=RED)
+    elif reps % 2 == 0:
+        count_down(short_break_seconds)
+        timer_label.config(text="Break", fg=PINK)
+    else:
+        count_down(work_seconds)
+        timer_label.config(text="Work", fg=GREEN)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
