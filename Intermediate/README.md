@@ -16,4 +16,5 @@
  <t>- Day 25 - CSV data files and Pandas library.  Project: States map game.<br>
  <t>- Day 26 - List Comprehensions.  Project: NATO Alphabet.<br>
  <t>- Day 27 - Args, Kwargs and Tkinter.  Project: Mile to Kilometers Converter<br>
+ <t>- Day 28 - Dynamic Typing.  Project: Pomodoro timer<br>
  
