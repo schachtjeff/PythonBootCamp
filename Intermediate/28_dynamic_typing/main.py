@@ -26,7 +26,22 @@ canvas = tk.Canvas(window, width=200, height=230, bg=YELLOW, highlightthickness=
 tomato_img = tk.PhotoImage(file="tomato.png")
 canvas.create_image(100, 115, image=tomato_img)
 canvas.create_text(100, 140, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
-canvas.pack()
+canvas.grid(row=1, column=1)
+
+# Add Timer label
+timer_label = tk.Label(text="Timer", font=(FONT_NAME, 50), bg=YELLOW, fg=GREEN)
+timer_label.grid(row=0, column=1)
+
+# Add Start and Reset Buttons
+start_button = tk.Button(text="Start", highlightthickness=0)
+start_button.grid(row=2, column=0)
+reset_button = tk.Button(text="Reset", highlightthickness=0)
+reset_button.grid(row=2, column=2)
+
+# Add Counter Label
+counter_label = tk.Label(text="✔", font=(FONT_NAME, 20, "bold"), bg=YELLOW, fg=GREEN)
+counter_label.grid(row=3, column=1)
+
 
 
 window.mainloop()
