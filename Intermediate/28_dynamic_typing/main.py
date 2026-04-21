@@ -11,8 +11,19 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
+my_timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- # 
+# ---------------------------- TIMER RESET ------------------------------- #
+
+def reset_timer():
+    # to stop timer
+    window.after_cancel(my_timer)
+    canvas.itemconfig(timer_text, text="00:00")
+    timer_label.config(text="Timer", fg=GREEN)
+    counter_label.config(text="")
+    global reps
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
@@ -36,7 +47,7 @@ def start_timer():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
-
+    global my_timer
     count_min = math.floor(count / 60)
     count_sec = count % 60
     # user friendly visual of secs and mins
@@ -48,7 +59,16 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         # Execute a command 'after' a time delay
-        window.after(1000, count_down, count - 1)
+        my_timer = window.after(1000, count_down, count - 1)
+    else:
+        start_timer()
+        # Adding checkmarks for every complete work session
+        marks = ""
+        check_text = "✔"
+        for n in range(math.floor(reps/2)):
+            marks += check_text
+        counter_label.config(text=marks)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()
@@ -70,11 +90,11 @@ timer_label.grid(row=0, column=1)
 # Add Start and Reset Buttons
 start_button = tk.Button(text="Start", highlightthickness=0, command=start_timer)
 start_button.grid(row=2, column=0)
-reset_button = tk.Button(text="Reset", highlightthickness=0)
+reset_button = tk.Button(text="Reset", highlightthickness=0, command=reset_timer)
 reset_button.grid(row=2, column=2)
 
 # Add Counter Label
-counter_label = tk.Label(text="✔", font=(FONT_NAME, 20, "bold"), bg=YELLOW, fg=GREEN)
+counter_label = tk.Label(font=(FONT_NAME, 20, "bold"), bg=YELLOW, fg=GREEN)
 counter_label.grid(row=3, column=1)
 
 window.mainloop()
