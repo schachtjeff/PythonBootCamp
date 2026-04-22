@@ -5,6 +5,19 @@ import tkinter as tk
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+# Save into data.txt -> 'website | email | password'
+# Delete entries after adding
+def add_data_to_file() -> None:
+    data = f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()}\n"
+    file = open("data.txt", "a")
+    file.write(data)
+    file.close()
+    # Delete entries from beginning to tkinter's end
+    website_entry.delete(0, tk.END)
+    password_entry.delete(0, tk.END)
+    # Reset the email entry to original
+    email_entry.insert(0, "hello@email.com")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Setup window
@@ -31,9 +44,11 @@ password_label.grid(row=3, column=0)
 # Entry boxes
 website_entry = tk.Entry(window, width=35)
 website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.focus()
 
 email_entry = tk.Entry(window, width=35)
 email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.insert(0, "hello@email.com")
 
 password_entry = tk.Entry(window, width=21)
 password_entry.grid(row=3, column=1)
@@ -42,7 +57,7 @@ password_entry.grid(row=3, column=1)
 generate_password_button = tk.Button(text="Generate Password")
 generate_password_button.grid(row=3, column=2)
 
-add_content_button = tk.Button(text="Add", width=36)
+add_content_button = tk.Button(text="Add", width=36, command=add_data_to_file)
 add_content_button.grid(row=4, column=1, columnspan=2)
 
 # Keep window open until close/exit
