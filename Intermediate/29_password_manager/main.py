@@ -1,5 +1,6 @@
 #Imports
 import tkinter as tk
+from tkinter import messagebox
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -8,15 +9,31 @@ import tkinter as tk
 # Save into data.txt -> 'website | email | password'
 # Delete entries after adding
 def add_data_to_file() -> None:
-    data = f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()}\n"
-    file = open("data.txt", "a")
-    file.write(data)
-    file.close()
-    # Delete entries from beginning to tkinter's end
-    website_entry.delete(0, tk.END)
-    password_entry.delete(0, tk.END)
-    # Reset the email entry to original
-    email_entry.insert(0, "hello@email.com")
+    website_data = website_entry.get()
+    password_data = password_entry.get()
+    email_data = email_entry.get()
+
+    # check if website or password is empty
+    if len(website_data) or len(password_data) or len(email_data):
+        messagebox.showerror(title="Oops", message="Please fill all fields")
+    else:
+        # Add message box
+        is_ok = messagebox.askokcancel(title=website_data, message=f"These are the details entered:\n"
+                                                           f"Email: {email_data}\n"
+                                                           f"Password: {password_data}\n"
+                                                           f"Ok to save?")
+
+        if is_ok:
+            data = f"{website_data} | {email_data} | {password_data}\n"
+            file = open("data.txt", "a")
+            file.write(data)
+            file.close()
+
+            # Delete entries from beginning to tkinter's end
+            website_entry.delete(0, tk.END)
+            password_entry.delete(0, tk.END)
+            # Reset the email entry to original, is there one?
+            #email_entry.delete(0, "hello@email.com")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
