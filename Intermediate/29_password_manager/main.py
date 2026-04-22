@@ -33,6 +33,7 @@ def generate_password() -> str:
     #  password_list += random.choice(numbers)
 
     password = "".join(password_list)
+    # Need to find a way to reset the entry so it doesn't just append.
     password_entry.insert(0, password)
     #pyperclip -> copy to the clipboard
     pyperclip.copy(password)
