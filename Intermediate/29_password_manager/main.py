@@ -1,9 +1,47 @@
 #Imports
 import tkinter as tk
 from tkinter import messagebox
+from random import randint, shuffle, choice
+import pyperclip
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+# From Day 5
+#Password Generator Project
+def generate_password() -> str:
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+    nr_letters = randint(8, 10)
+    nr_symbols = randint(2, 4)
+    nr_numbers = randint(2, 4)
+
+    password_letters = [choice(letters) for letter in range(nr_letters)]
+    password_numbers = [choice(numbers) for number in range(nr_numbers)]
+    password_symbol = [choice(symbols) for symbol in range(nr_symbols)]
+
+    password_list = password_letters + password_numbers + password_symbol
+    shuffle(password_list)
+
+    # Old code
+    #for char in range(nr_letters):
+    #  password_list.append(random.choice(letters))
+    #for char in range(nr_symbols):
+    #  password_list += random.choice(symbols)
+    #for char in range(nr_numbers):
+    #  password_list += random.choice(numbers)
+
+    password = "".join(password_list)
+    password_entry.insert(0, password)
+    #pyperclip -> copy to the clipboard
+    pyperclip.copy(password)
+    #pyperclip.paste()
+
+    #for char in password_list:
+    #  password += char
+    #print(f"Your password is: {password}")
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 # Save into data.txt -> 'website | email | password'
@@ -71,7 +109,7 @@ password_entry = tk.Entry(window, width=21)
 password_entry.grid(row=3, column=1)
 
 # Buttons
-generate_password_button = tk.Button(text="Generate Password")
+generate_password_button = tk.Button(text="Generate Password", command=generate_password)
 generate_password_button.grid(row=3, column=2)
 
 add_content_button = tk.Button(text="Add", width=36, command=add_data_to_file)
