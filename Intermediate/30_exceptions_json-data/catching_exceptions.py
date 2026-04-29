@@ -19,6 +19,17 @@ finally:
     # runs no matter what happens
     file.close()
     print("The file was closed")
+    # raise your own error
+    raise KeyError("stuff happened")
+
+height = float(input("Height: "))
+weight = float(input("Weight: "))
+
+if height > 3:
+    raise ValueError("Height should not be greater than 3")
+
+bmi = weight / height ** 2
+print(bmi)
 
 #KeyError
 #a_dictionary = {"key": "value"}
