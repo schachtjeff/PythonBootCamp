@@ -18,4 +18,5 @@
  <t>- Day 27 - Args, Kwargs and Tkinter.  Project: Mile to Kilometers Converter<br>
  <t>- Day 28 - Dynamic Typing.  Project: Pomodoro timer<br>
  <t>- Day 29 - Project: Password Manager using Tkinter<br>
+ <t>- Day 30 - Errors, Exceptions and JSON data. Project: Update Password Manager<br>
  
