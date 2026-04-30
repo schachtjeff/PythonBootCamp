@@ -14,3 +14,5 @@
  * <t><t><t><img src="./Intermediate/18_turtle_gui/hirst_paint_project/Hirst_like_painting.jpg" width="150" height="100" alt="Rock Paper Scissors Project" /><br>
  * <t>- Day 23 - Capstone Project: Turtle Crossing game.<br>
  <t><t><t><img src="./Intermediate/23_tutle_cross/TurtleCrossing.jpg" width="250" height="200" alt="Turtle Crossing" /><br>
+ <t>- Day 31 - Capstone Project: Language Flash cards.<br>
+ <t><t><t><img src="./Intermediate/31_flash_cards/images/flash_card.jpg" width="250" height="200" alt="Language Flash Cards" /><br>
