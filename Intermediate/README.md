@@ -19,4 +19,5 @@
  <t>- Day 28 - Dynamic Typing.  Project: Pomodoro timer<br>
  <t>- Day 29 - Project: Password Manager using Tkinter<br>
  <t>- Day 30 - Errors, Exceptions and JSON data. Project: Update Password Manager<br>
+ <t>- Day 31 - Capstone Project: Language Flash cards.<br>
  
