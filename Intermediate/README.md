@@ -20,4 +20,5 @@
  <t>- Day 29 - Project: Password Manager using Tkinter<br>
  <t>- Day 30 - Errors, Exceptions and JSON data. Project: Update Password Manager<br>
  <t>- Day 31 - Capstone Project: Language Flash cards.<br>
+ <t><t><t><img src="./31_flash_cards/images/flash_card.jpg" width="250" height="200" alt="Language Flash Cards" /><br>
  

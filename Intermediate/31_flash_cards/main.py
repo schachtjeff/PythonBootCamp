@@ -1,3 +1,5 @@
+#  Needs more enhancement
+
 # Imports
 import pandas as pd
 import tkinter as tk
@@ -14,7 +16,7 @@ current_card = {}
 
 # ---------------------------- Next CARD ------------------------------- #
 def next_card() -> None:
-    global current_card, flip_timer
+    global current_card, flip_timer, words_to_learn
     window.after_cancel(flip_timer)
     words_to_learn = read_csv_to_df()
     current_card = choice(words_to_learn)
@@ -38,6 +40,14 @@ def read_csv_to_df():
     else:
         df_in_dict = df_lang.to_dict(orient="records")
         return df_in_dict
+
+# ---------------------------- Remove Word ------------------------------- #
+# If the word is known, then we just remove the word from our data
+def remove_word() -> None:
+    words_to_learn.remove(current_card)
+    pd.DataFrame(words_to_learn).to_csv("data/known_words.csv", index=False)
+    next_card()
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Setup window
